@@ -1,0 +1,262 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>DocuHR — Case Study</title><style>
+  :root {
+    --ink: #1a1d23;
+    --ink-soft: #4b5261;
+    --ink-faint: #8a90a0;
+    --paper: #fdfdfc;
+    --accent: #2456d6;
+    --accent-soft: #eef2fd;
+    --rule: #e6e7ea;
+    --callout-bg: #f6f7f9;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                 "Helvetica Neue", Arial, sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.7;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+  }
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 72px 24px 96px;
+  }
+
+  /* ---- Hero ---- */
+  .kicker {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+  h1 {
+    font-size: clamp(30px, 5vw, 42px);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    font-weight: 750;
+    margin-bottom: 20px;
+  }
+  .summary {
+    font-size: 20px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    margin-bottom: 32px;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 28px;
+    padding: 18px 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 56px;
+    font-size: 14px;
+  }
+  .meta div { min-width: 120px; }
+  .meta dt {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 2px;
+  }
+  .meta dd { font-weight: 500; }
+
+  /* ---- Sections ---- */
+  h2 {
+    font-size: 24px;
+    letter-spacing: -0.01em;
+    font-weight: 700;
+    margin: 64px 0 16px;
+  }
+  h3 {
+    font-size: 18px;
+    font-weight: 650;
+    margin: 32px 0 10px;
+  }
+  p { margin-bottom: 18px; }
+  ul, ol { margin: 0 0 18px 22px; }
+  li { margin-bottom: 8px; }
+  a { color: var(--accent); }
+  strong { font-weight: 650; }
+
+  code {
+    font-family: ui-monospace, SFMono-Regular, "Cascadia Code", Menlo, Consolas, monospace;
+    font-size: 0.88em;
+    background: var(--callout-bg);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 1px 5px;
+  }
+  pre {
+    background: #14161b;
+    color: #e8eaf0;
+    border-radius: 10px;
+    padding: 18px 20px;
+    overflow-x: auto;
+    margin: 0 0 24px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  pre code { background: none; border: none; padding: 0; color: inherit; }
+
+  blockquote {
+    border-left: 3px solid var(--accent);
+    padding: 4px 0 4px 20px;
+    margin: 0 0 24px;
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+
+  /* ---- Metrics callouts ---- */
+  .metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 14px;
+    margin: 28px 0 36px;
+  }
+  .metric {
+    background: var(--accent-soft);
+    border: 1px solid #d6e0f8;
+    border-radius: 12px;
+    padding: 20px 18px;
+  }
+  .metric .value {
+    font-size: 30px;
+    font-weight: 750;
+    letter-spacing: -0.02em;
+    color: var(--accent);
+    line-height: 1.1;
+    margin-bottom: 6px;
+  }
+  .metric .label {
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    line-height: 1.45;
+  }
+  /* Use for unverified numbers awaiting the user: */
+  .metric.placeholder { background: #fdf6e7; border-color: #f0dfb2; }
+  .metric.placeholder .value { color: #a07708; }
+
+  /* ---- Figures / screenshot placeholders ---- */
+  figure { margin: 32px 0 36px; }
+  figure img {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid var(--rule);
+    display: block;
+  }
+  .img-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 240px;
+    border: 2px dashed #c9cdd6;
+    border-radius: 10px;
+    background: var(--callout-bg);
+    color: var(--ink-faint);
+    font-size: 14px;
+    padding: 24px;
+  }
+  figcaption {
+    font-size: 13.5px;
+    color: var(--ink-faint);
+    margin-top: 10px;
+    line-height: 1.5;
+  }
+
+  footer {
+    margin-top: 80px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    font-size: 14px;
+    color: var(--ink-faint);
+  }
+
+  @media print {
+    main { padding: 24px; }
+    .img-placeholder { min-height: 120px; }
+  }
+
+.mermaid{background:var(--callout-bg);border:1px solid var(--rule);border-radius:10px;padding:16px;color:var(--ink);text-align:center;overflow-x:auto}
+table{border-collapse:collapse;width:100%;margin:0 0 24px;font-size:15px}th,td{border-bottom:1px solid var(--rule);padding:8px 10px;text-align:left;vertical-align:top}th{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint)}
+.links{margin:-12px 0 28px;font-size:15px}
+</style></head>
+<body><main><p class="kicker">Product case study · Marco Alvarado</p><h1>DocuHR — Labor compliance documents, tracked by AI</h1><p class="summary">A multi-tenant SaaS that helps Chilean contractor companies keep every worker's paperwork valid for every client — with AI expiry extraction, a compliance matrix, and proactive alerts.</p><p class="links"><a href="https://github.com/7pixel-cl/docuhr-showcase">GitHub</a></p><dl class="meta"><div><dt>Role</dt><dd>Product owner &amp; sole engineer</dd></div><div><dt>Timeline</dt><dd>2026</dd></div><div><dt>Stack</dt><dd>Next.js, TypeScript, tRPC, Drizzle, PostgreSQL RLS, Vercel AI SDK, Inngest, Sentry</dd></div></dl>
+<h2>At a glance</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Role</strong></td>
+<td>Product owner &amp; sole engineer</td>
+</tr>
+<tr>
+<td><strong>Users</strong></td>
+<td>Document managers, supervisors, and admins at contractor companies</td>
+</tr>
+<tr>
+<td><strong>Status</strong></td>
+<td>Advanced MVP — Phase 1 (9 epics) shipped through 15 reviewed pull requests</td>
+</tr>
+<tr>
+<td><strong>Scale of the codebase</strong></td>
+<td>~21k lines of TypeScript · 15 tables · ~150 automated tests (unit, cross-tenant RLS, E2E)</td>
+</tr>
+</tbody></table>
+<h2>The problem</h2>
+<p>In Chile, contractor companies (mining, construction, facilities) can only send a worker to a client site if that worker&#39;s documents are current <em>for that specific client</em>: health certificates, safety courses, contracts, insurance. Each client asks for a different set, documents expire on different dates, and a single expired certificate can block a whole crew at the gate.</p>
+<p>Most companies track this in spreadsheets and shared folders — so the first sign of a problem is usually a rejected worker.</p>
+<h2>What I built</h2>
+<ul>
+<li><strong>Compliance matrix</strong> — a virtualized workers × document-types grid per client company, showing at a glance what&#39;s valid, expiring, missing, or expired, plus a daily &quot;what to do today&quot; banner.</li>
+<li><strong>Secure uploads with version history</strong> — notes, previous versions, and an audit trail per document.</li>
+<li><strong>AI expiry extraction</strong> — the system reads the uploaded document and extracts its expiry date; high-confidence results are verified automatically, the rest go to a human review queue with a confidence badge.</li>
+<li><strong>Proactive alerts</strong> — a daily job groups documents into <em>expired / 7 / 15 / 30 days</em> per organization and emails the right people.</li>
+<li><strong>Bulk onboarding</strong> — worker import from Excel and reusable per-client requirement templates.</li>
+<li><strong>Multi-organization accounts</strong> — users can belong to several companies and switch between them.</li>
+</ul>
+<h2>Document pipeline</h2>
+<pre class="mermaid">flowchart LR
+  U["User uploads file"] --> T["Tenant-bound signed upload path&lt;br/>(HMAC)"]
+  T --> V["Server re-verifies&lt;br/>path · size · MIME"]
+  V --> S["Background job: scan&lt;br/>magic bytes · SHA-256 dedupe · quarantine"]
+  S --> G["AI preflight&lt;br/>quota · cost · rate limits"]
+  G --> X["Extract expiry&lt;br/>multi-model failover"]
+  X -->|"confidence ≥ 0.8"| OK["verified + expiry date"]
+  X -->|"lower"| RV["needs_review queue"]
+  OK --> M["Compliance matrix"]
+  RV --> M
+  C["Daily cron 07:00 (Santiago)"] --> F["Fan-out: one job per org"]
+  F --> E["Expiry digest email&lt;br/>expired · 7 · 15 · 30 days"]</pre><h2>Engineering highlights</h2>
+<h3>1. Tenant isolation the database enforces — and CI polices</h3>
+<p>Row-level security is <strong>forced</strong> on every tenant table. A custom CI check <strong>fails any migration</strong> that adds a tenant table without RLS and a policy, and cross-tenant tests run in CI as a non-superuser role, so a leaking query is caught before merge, not in production.</p>
+<h3>2. Upload security as a pipeline, not a checkbox</h3>
+<p>Upload URLs are bound to the tenant with an HMAC and re-verified server-side; files are checked by magic bytes (not extension), deduplicated by hash, and quarantined if anything looks wrong — all in background jobs so the UI stays fast.</p>
+<h3>3. Cost-aware, multi-provider AI</h3>
+<p>Extraction goes through a small model router that chooses providers per subscription plan and <strong>fails over</strong> between them. A preflight step enforces per-org quotas, rate limits, and a cost budget (converted to local currency), and every call&#39;s usage is logged — so AI spend is predictable for a B2B price point.</p>
+<h3>4. Human-in-the-loop by design</h3>
+<p>Confidence thresholds decide what is auto-verified and what goes to a person. The UI shows <em>why</em> a document is flagged, so reviewers trust the automation instead of re-checking everything.</p>
+<h3>5. Production-grade operations from day one</h3>
+<p>Error tracking, structured logs, product analytics, feature flags, Redis rate limiting, transactional email with single-use unsubscribe tokens, and legal templates (terms, privacy, DPA) — the unglamorous parts that let a small SaaS sell to real companies.</p>
+<h2>Stack</h2>
+<p>Next.js 16 · React 19 · TypeScript (strict) · tRPC 11 · Drizzle ORM · PostgreSQL (Neon) with RLS · Auth.js v5 · Inngest · Vercel Blob · Vercel AI SDK (Gemini, Claude, OpenAI) + document-AI parsing · Resend + React Email · Upstash Redis · Sentry · Axiom · PostHog · GrowthBook · Vitest · Playwright · Vercel</p>
+<h2>What I learned</h2>
+<p>AI is the headline, but the value is in the plumbing around it: confidence thresholds, review queues, cost guards, and alerts that arrive <em>before</em> a worker is turned away. Treating multi-tenancy as a database guarantee — enforced by CI — was the decision that made everything else safe to build quickly.</p>
+<hr>
+<p>© 2026 Marco Alvarado. All rights reserved. This showcase does not license the production software.</p>
+
+<footer>© 2026 Marco Alvarado · <a href="https://github.com/7pixel-cl">github.com/7pixel-cl</a> · <a href="https://7pixel.cl">7pixel.cl</a></footer></main>
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.esm.min.mjs";mermaid.initialize({startOnLoad:true,theme:"neutral"});</script>
+</body></html>
